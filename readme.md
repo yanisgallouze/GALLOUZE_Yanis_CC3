@@ -84,8 +84,8 @@ http-prod : Démarre le serveur sans redémarrage automatique et définit l'envi
 
 ### Question 1.8 donner les codes HTTP reçus par votre navigateur pour chacune des quatre pages précédentes.
 
-/index.html : 200 OK
+/index.html : 200 OK MEME CHOSE AVEC /
 /random.html : 200 OK
-/ : 404 NOT FOUND
+/ : 200 OK MEME CHOSE AVEC /index.html
 /dont-exist : 404 NOT FOUND
 
