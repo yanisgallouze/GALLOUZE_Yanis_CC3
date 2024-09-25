@@ -49,7 +49,7 @@ keep-alive
 content-length:
 20
 content-type:
-application/json ############################################## content type a été ajouté grâce au code 
+application/json ############################################## content type a été ajouté grâce au code ##############
 date:
 Wed, 25 Sep 2024 02:17:11 GMT
 keep-alive:
