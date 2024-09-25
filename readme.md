@@ -82,3 +82,10 @@ http-dev : Utilise nodemon pour redémarrer automatiquement le serveur lors de m
 
 http-prod : Démarre le serveur sans redémarrage automatique et définit l'environnement en mode production (NODE_ENV=production), avec des optimisations et moins de logs.
 
+### Question 1.8 donner les codes HTTP reçus par votre navigateur pour chacune des quatre pages précédentes.
+
+/index.html : 200 OK
+/random.html : 200 OK
+/ : 404 NOT FOUND
+/dont-exist : 404 NOT FOUND
+
