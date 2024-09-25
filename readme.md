@@ -49,7 +49,7 @@ keep-alive
 content-length:
 20
 content-type:
-application/json ############################################## content type a été ajouté grâce au code ##############
+application/json ### CONTENT TYPE A ETE AJOUTE GRACE AU CODE ###
 date:
 Wed, 25 Sep 2024 02:17:11 GMT
 keep-alive:
@@ -64,3 +64,21 @@ Le client reçois la page index.html
 ### Question 1.4 quelle est l’erreur affichée dans la console ? Retrouver sur https://nodejs.org/api le code d’erreur affiché 
 
 L'erreur affichée sera de type ENOENT si le fichier index.html n'est pas trouvé.
+
+### Question 1.5 : modification du requestListener avec async/await
+
+### Question 1.6 indiquer ce que cette commande a modifié dans votre projet.
+
+npm install cross-env --save
+npm install nodemon --save-dev
+
+Ces commandes ont ajoutées les dépendances cross-env et nodemon dans le fichier package.json et ont ajoutés aussi un fichier package-lock.json qui répertories tout les packages de ces dépendances.
+
+### Question 1.7 quelles sont les différences entre les scripts http-dev et http-prod ?
+
+Les scripts http-dev et http-prod diffèrent principalement par leur usage :
+
+http-dev : Utilise nodemon pour redémarrer automatiquement le serveur lors de modifications et définit l'environnement en mode développement (NODE_ENV=development).
+
+http-prod : Démarre le serveur sans redémarrage automatique et définit l'environnement en mode production (NODE_ENV=production), avec des optimisations et moins de logs.
+
