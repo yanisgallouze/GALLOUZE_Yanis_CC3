@@ -61,3 +61,6 @@ text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,imag
 
 Le client reçois la page index.html 
 
+### Question 1.4 quelle est l’erreur affichée dans la console ? Retrouver sur https://nodejs.org/api le code d’erreur affiché 
+
+L'erreur affichée sera de type ENOENT si le fichier index.html n'est pas trouvé.
