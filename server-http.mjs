@@ -9,59 +9,30 @@ console.log("NODE_ENV =", process.env.NODE_ENV);
 async function requestListener(request, response) {
   response.setHeader("Content-Type", "text/html");
   try {
-    const contents = await fs.readFile("index.html", "utf8");
-    const urlParts = request.url.split("/");
-    switch (urlParts[1]) {
-      case "index.html":
+    const conts = await fs.readFile("index.html", "utf8");
+    switch (request.url.split("/")[1]){
       case "":
+      case "index.html":
         response.writeHead(200);
-        return response.end(contents);
+        return response.end(conts);
+      case "random.html":
+        response.writeHead(200);
+        return response.end(`<html><p>${Math.floor(100 * Math.random())}</p></html>`);
       case "random":
-        if (urlParts[2]) {
-          const nb = parseInt(urlParts[2], 10);
-          const numbers = Array.from({ length: nb }).map(
-            () => `<li>${Math.floor(100 * Math.random())}</li>`
-          );
-          response.writeHead(200);
-          return response.end(`<html><ul>${numbers.join("")}</ul></html>`);
+        const num = parseInt(request.url.split('/')[2])
+        let text = ""
+        for (let iteration = 0; iteration<num; ite++){
+          text+=`<p>${Math.floor(100 * Math.random())}</p>`
         }
-        break;
-      default:
-        response.writeHead(404);
+        return response.end(`<html>${texte}</html>`)
+    default:
+      response.writeHead(404);
         return response.end(`<html><p>404: NOT FOUND</p></html>`);
     }
   } catch (error) {
     console.error(error);
     response.writeHead(500);
     return response.end(`<html><p>500: INTERNAL SERVER ERROR</p></html>`);
-  }
-}
-
-async function requestListener(request, response) {
-  response.setHeader("Content-Type", "text/html");
-  try {
-    const contents = await fs.readFile("index.html", "utf8");
-    
-    // Gestion des routes
-    switch (request.url) {
-      case "/index.html":
-      case "/": // Traite /index.html et / de la même manière
-        response.writeHead(200);
-        return response.end(contents);
-      
-      case "/random.html":
-        const randomNumber = Math.floor(100 * Math.random());
-        response.writeHead(200);
-        return response.end(`<html><p>${randomNumber}</p></html>`);
-      
-      default:
-        response.writeHead(404);
-        return response.end("<html><p>404: NOT FOUND</p></html>");
-    }
-  } catch (error) {
-    console.error(error);
-    response.writeHead(500);
-    return response.end("<html><p>500: INTERNAL SERVER ERROR</p></html>");
   }
 }
 

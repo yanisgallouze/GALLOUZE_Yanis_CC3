@@ -89,3 +89,39 @@ http-prod : Démarre le serveur sans redémarrage automatique et définit l'envi
 / : 200 OK MEME CHOSE AVEC /index.html
 /dont-exist : 404 NOT FOUND
 
+## Partie 2 : framework Express
+
+### Question 2.1 donner les URL des documentations de chacun des modules installés par la commande précédente.
+
+- Question 2.1 : Documentations des modules installés
+- Express: https://expressjs.com/
+- Http-errors: https://github.com/jshttp/http-errors
+- Loglevel: https://www.npmjs.com/package/loglevel
+- Morgan: https://github.com/expressjs/morgan
+
+### Question 2.2 vérifier que les trois routes fonctionnent.
+
+- http://localhost:8000/ : 200 OK
+- http://localhost:8000/index.html : 200 OK 
+- http://localhost:8000/random/5 : 200 OK 
+
+### Question 2.3 : En-têtes des réponses fournies par Express
+
+connection:
+keep-alive
+content-length:
+81
+content-type:
+text/html; charset=utf-8
+date:
+Mon, 30 Sep 2024 02:09:37 GMT
+etag:
+W/"51-WSGaceofHEvJXRuG+5RdtEd7FEg"
+keep-alive:
+timeout=5
+x-powered-by:
+Express
+
+### Question 2.4 quand l’événement listening est-il déclenché ?
+
+L'événement listening est déclenché une fois que le serveur est en écoute sur le port spécifié (8000).
