@@ -4,6 +4,7 @@ import createError from 'http-errors';
 
 const host = "localhost";
 const port = 8000;
+const mode = process.env.NODE_ENV || 'development';
 
 const app = express();
 
@@ -30,5 +31,23 @@ server.on("listening", () =>
     `HTTP listening on http://${server.address().address}:${server.address().port} with mode '${process.env.NODE_ENV}'`,
   ),
 );
+
+app.use((request, response, next) => {
+    console.debug(`default route handler : ${request.url}`);
+    return next(createError(404, "Page not found"));
+  });
+  
+  // Gestionnaire d'erreurs
+  app.use((error, _request, response, _next) => {
+    console.debug(`default error handler: ${error}`);
+    const status = error.status ?? 500;
+    const stack = app.get("env") === "development" ? error.stack : "";
+    const result = { code: status, message: error.message, stack };
+  
+    return response.status(status).render("error", result);
+  });
+
+  
+
 
 console.info(`File ${import.meta.url} executed.`);

@@ -136,5 +136,13 @@ L'option par défaut dans Express est redirect: true pour les fichiers statiques
 
 - Forçage du rafraîchissement (Ctrl+Shift+R) : Le code HTTP peut être 304 (Not Modified) si le fichier est déjà en cache et n'a pas changé. Mais dans mon cas j'ai eu 200 OK car j'ai désactivé le cache du navigateur.
 
+### Question 2.7 vérifier que l’affichage change bien entre le mode production et le mode development.
 
+- Avec le mode développement : 
+    http://localhost:8000/javascript : Error 404 Page not found avec le message d'erreur
+    http://localhost:8000/random/yanis : Error 400 Invalid number parameter avec le message d'erreur
 
+- Avec le mode production :  
+    http://localhost:8000/javascript : Error 404 Page not found sans le message d'erreur puique le client s'en fiche
+    http://localhost:8000/random/yanis : Error 400 Invalid number parameter sans le message d'erreur puique le client s'en fiche
+    
