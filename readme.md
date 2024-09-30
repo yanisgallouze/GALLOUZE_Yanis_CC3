@@ -140,9 +140,10 @@ L'option par défaut dans Express est redirect: true pour les fichiers statiques
 
 - Avec le mode développement : 
     http://localhost:8000/javascript : Error 404 Page not found avec le message d'erreur
+    
     http://localhost:8000/random/yanis : Error 400 Invalid number parameter avec le message d'erreur
 
 - Avec le mode production :  
     http://localhost:8000/javascript : Error 404 Page not found sans le message d'erreur puique le client s'en fiche
     http://localhost:8000/random/yanis : Error 400 Invalid number parameter sans le message d'erreur puique le client s'en fiche
-    
+
