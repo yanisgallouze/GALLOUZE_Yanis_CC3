@@ -125,3 +125,16 @@ Express
 ### Question 2.4 quand l’événement listening est-il déclenché ?
 
 L'événement listening est déclenché une fois que le serveur est en écoute sur le port spécifié (8000).
+
+### Question 2.5 indiquer quelle est l’option (activée par défaut) qui redirige / vers /index.html ?
+
+L'option par défaut dans Express est redirect: true pour les fichiers statiques, ce qui redirige / vers /index.html automatiquement.
+
+### Question 2.6 visiter la page d’accueil puis rafraichir (Ctrl+R) et ensuite forcer le rafraichissement (Ctrl+Shift+R). Quels sont les codes HTTP sur le fichier style.css ? Justifier.
+
+- Rafraîchissement normal (Ctrl+R) : Le code HTTP pour style.css est 200 (OK) car le fichier est chargé depuis le serveur.
+
+- Forçage du rafraîchissement (Ctrl+Shift+R) : Le code HTTP peut être 304 (Not Modified) si le fichier est déjà en cache et n'a pas changé. Mais dans mon cas j'ai eu 200 OK car j'ai désactivé le cache du navigateur.
+
+
+
